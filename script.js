@@ -10,4 +10,4 @@ elem.addEventListener('click', function() {
     var counter = document.getElementById('counter');
     var currentValue = parseInt(counter.innerText);
     counter.innerText = currentValue - 1;
-}, false);
+}, false) ;

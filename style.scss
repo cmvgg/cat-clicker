@@ -1,98 +1,93 @@
+$h1-color: #333333;
+$h1-font-size: 24px;
+$h1-line-height: 1.5;
+
+
+body {
+  background-color: aquamarine;
+}
+.click {
+  color: $h1-color;
+  font-size: $h1-font-size;
+  line-height: $h1-line-height;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
 .photo {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap: 10px;
-    
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #cat {
+    grid-row: 1;
+    grid-column: 1 / 2;
+
     @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    
-    #cat {
-      grid-row: 1;
+      grid-row: 1 / 3;
       grid-column: 1 / 2;
-      
-      @media (min-width: 768px) {
-        grid-row: 1 / 3;
-        grid-column: 1 / 2;
-      }
-    }
-    
-    #dog {
-      grid-row: 1;
-      grid-column: 1 / 2;
-      
-      @media (min-width: 768px) {
-        grid-row: 1 / 3;
-        grid-column: 2 / 3;
-      }
     }
   }
 
-  
+  #dog {
+    grid-row: 1;
+    grid-column: 1 / 2;
 
-
- 
-
-  .contenedor {
-    width: 100%; /*Ancho del contenedor*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /*Altura del contenedor*/
-  }
-  
-  #counter {
-    // Estilos básicos
-    padding: 10px;
-    background-color: #f1f1f1;
-    color: #333;
-    font-size: 24px;
-    text-align: center;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  
-    // Estilos adicionales para el movimiento
-    width: 100px; // Define el ancho del contador
-    position: relative; // Permite el uso de "transform"
-    left: 50%; // Centra el contador horizontalmente
-    transform: translateX(-50%); // Centra el contador horizontalmente
-  
-    &::before { // Agrega un marcador en el centro del contador
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 2px;
-      height: 40%;
-      background-color: #333;
-      transform: translate(-50%, -50%);
-      z-index: -1;
+    @media (min-width: 768px) {
+      grid-row: 1 / 3;
+      grid-column: 2 / 3;
     }
-    
-    // Mueve el contador hacia la izquierda o derecha según su valor
-    $counter-value: 0; // Ejemplo de valor del contador (cambiar según sea necesario)
-    transform: translateX(calc((#{$counter-value} - 50) * 10px)) translateX(-50%); // Mueve el contador según su valor y lo centra horizontalmente
-  
   }
-  
+}
 
 
+#counter {
+  // Estilos básicos
+  padding: 10px;
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
+  // Centra el contador horizontalmente
+  width: 100px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 
-
-  #counter[data-value="1"] {
-    transform: translateX(-40%);
+  &::before {
+    // Agrega un marcador en el centro del contador
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 40%;
+    background-color: #333;
+    transform: translate(-50%, -50%);
+    z-index: -1;
   }
-  
-  #counter[data-value="2"] {
-    transform: translateX(-30%);
-  }
-  
-  #counter[data-value="3"] {
-    transform: translateX(-20%);
-  }
+
+  // Mueve el contador hacia la izquierda o derecha según su valor
+  $counter-value: 5;
+  // Define un valor límite a partir del cual el contador se mueve
+  $limit: 10;
+  // Calcula la posición del contador en píxeles
+  $position: calc((#{$counter-value} - 1) * (100% / (#{$limit} - 1)));
+  // Mueve el contador según su valor y lo centra horizontalmente
+  left: $position;
+  transform: translateX(-50%);
+}
+

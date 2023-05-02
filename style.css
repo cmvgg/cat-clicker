@@ -54,20 +54,5 @@ body {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   width: 100px;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  left: calc((5 - 1) * 100% / (10 - 1));
-  transform: translateX(-50%);
 }
-#counter::before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 2px;
-  height: 40%;
-  background-color: #333;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}/*# sourceMappingURL=style.css.map  */
+*# sourceMappingURL=style.css.map  */

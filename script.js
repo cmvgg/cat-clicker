@@ -18,8 +18,7 @@ catImages.forEach((catImage) => {
 // Añadir evento de click al perro
 const dogName = 'Toby';
 dogImage.addEventListener('click', () => {
-  if (parseInt(counter.innerText) > 0) {
     counter.innerText = parseInt(counter.innerText) - 1;
     dogImage.setAttribute('title', dogName);
   }
-});
+);

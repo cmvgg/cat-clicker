@@ -17,7 +17,7 @@ body {
 }
 @media (min-width: 768px) {
   .photo {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .photo img {
@@ -70,4 +70,4 @@ body {
   background-color: #333;
   transform: translate(-50%, -50%);
   z-index: -1;
-}/*# sourceMappingURL=style.css.map  */
+}/*# sourceMappingURL=style.css.map */
